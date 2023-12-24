@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tbody,
+        tr,
+        td {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        a {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>Nhập tiêu đề</td>
+                <td>
+                    <input type="text"><br>
+                    <a id="search" onclick="searchAvadnge()">Tìm kiếm nâng cao</a>
+                </td>
+            </tr>
+            <tr style="display: none;">
+                <td>chon chuyên mục</td>
+                <td>
+                    <select name="" id="">
+                        <option value="">Php</option>
+                        <option value="">JavaScript</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button>Tìm kiếm</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="margin-top: 20px;">
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>tiêu đề 1</td>
+                <td><button>delete</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>tiêu đề 2</td>
+                <td><button>delete</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>tiêu đề 3</td>
+                <td><button>delete</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>tiêu đề 4</td>
+                <td><button>delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function searchAvadnge() {
+            let search = document.getElementById("search");
+            if (search.innerText == "Tìm kiếm nâng cao") {
+                document.querySelector("table>tbody>tr:nth-child(2)").style.display = "table-row"
+                search.innerText = "Bỏ kiếm nâng cao"
+            } else {
+                document.querySelector("table>tbody>tr:nth-child(2)").style.display = "none"
+                search.innerText = "Tìm kiếm nâng cao"
+            }
+
+
+        }
+
+
+        let buttons = document.querySelectorAll("button")
+        for (const button of buttons) {
+            button.addEventListener("click", function () {
+                this.parentElement.parentElement.remove();
+            })
+        }
+
+
+    </script>
+</body>
+
+</html>
