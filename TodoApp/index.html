@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="d-flex align-items-center justify-content-center mt-3">
+        <div class="row col-6">
+            <h6 class="fst-italic text-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique,
+                saepe?
+            </h6>
+            <div class="d-flex">
+                <input id="input1" type="text" class="form-control">
+                <button class="btn btn-success  btn-sm" onclick="handleTask()">Add</button>
+            </div>
+            <table class="table table-striped  table-hover mt-3">
+                <thead class="table-success">
+                    <tr>
+                        <th>#ID</th>
+                        <th>Task Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./todo.js"></script>
+</body>
+
+</html>
