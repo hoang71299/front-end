@@ -54,19 +54,33 @@ function renderTask() {
     })
     document.getElementById("tbody").innerHTML = htmls.join('')
 }
-function handleTask() {
+function handleTask(e) {
+    e.preventDefault();
+
     let input = document.getElementById("input1").value
     let lastId = TaskManager.lastId()
     let task = new Task(lastId + 1, input)
     TaskManager.addTask(task);
     renderTask()
+    reset()
+
 }
 function changeStatus(taskId) {
-    TaskManager.getDone(taskId);
-    renderTask()
+    let confirm = window.confirm("ban co muon done");
+    if (confirm) {
+        TaskManager.getDone(taskId);
+        renderTask()
+    }
+
 }
 function deleteTask(task) {
-    TaskManager.deleteTask(task)
-    renderTask()
+    let confirm = window.confirm("ban co muon xoa");
+    if (confirm) {
+        TaskManager.deleteTask(task)
+        renderTask()
+    }
+}
+function reset() {
+    document.getElementById("input1").value = null
 }
 renderTask()
